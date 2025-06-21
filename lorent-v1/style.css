@@ -1,0 +1,241 @@
+:root {
+  --gold: #d4af37;
+  --black: #181818;
+  --white: #fff;
+  --gray: #e5e5e5;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Montserrat', Arial, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(24, 24, 24, 0.96);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+nav a {
+  color: var(--white);
+  margin-left: 2rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav .basket-link:hover {
+  color: var(--gold);
+}
+
+.basket-link #basket-count {
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 12px;
+  padding: 0 6px;
+  font-size: 0.9rem;
+  margin-left: 2px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #181818 70%, var(--gold) 100%);
+  text-align: center;
+  padding: 5rem 1rem 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+
+.cta-btn {
+  background: var(--gold);
+  color: var(--black);
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.cta-btn:hover {
+  background: #bfa533;
+}
+
+.section {
+  margin: 3rem auto;
+  max-width: 950px;
+  padding: 2rem 1rem;
+  background: rgba(24, 24, 24, 0.85);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(212, 175, 55, 0.06);
+}
+
+h2 {
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.watch-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.watch-card {
+  background: #232323;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(212, 175, 55, 0.04);
+  padding: 1.5rem;
+  text-align: center;
+  width: 260px;
+  transition: box-shadow 0.3s;
+}
+
+.watch-card:hover {
+  box-shadow: 0 8px 32px var(--gold);
+}
+
+.watch-card img {
+  max-width: 180px;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border: 3px solid var(--gold);
+}
+
+.watch-card h3 {
+  color: var(--gold);
+}
+
+.watch-card button {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 1.2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.watch-card button:hover {
+  background: #bfa533;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  max-width: 350px;
+}
+
+form input, form textarea {
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  border: none;
+  font-size: 1rem;
+}
+
+form button {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #bfa533;
+}
+
+/* Chat icon and box */
+#chat-icon {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: var(--gold);
+  color: var(--black);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.22);
+  cursor: pointer;
+  z-index: 2000;
+  transition: background 0.2s;
+}
+
+#chat-icon:hover {
+  background: #bfa533;
+}
+
+#chat-box {
+  position: fixed;
+  bottom: 110px;
+  right: 36px;
+  width: 300px;
+  background: #222;
+  color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(212,175,55,0.12);
+  z-index: 2000;
+  padding: 1.2rem;
+}
+
+#chat-box.hidden {
+  display: none;
+}
+
+.chat-header {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--gold);
+}
+
+#close-chat {
+  margin-top: 1rem;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
