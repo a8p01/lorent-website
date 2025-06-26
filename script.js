@@ -32,25 +32,20 @@ closeChat.addEventListener('click', () => {
 });
 
 // Handle voice chat button click
-if (startVoiceChat) {
-  startVoiceChat.addEventListener('click', () => {
-    // Option 1: Open in new window/tab
-    const voiceChatWindow = window.open(
-      VOICEBOT_URL, 
-      'LorentVoiceBot', 
-      'width=900,height=700,scrollbars=yes,resizable=yes,status=yes,menubar=no,toolbar=no'
-    );
-    
-    // Optional: Focus the new window
-    if (voiceChatWindow) {
-      voiceChatWindow.focus();
-      // Close the chat box since user is now using the voicebot
-      chatBox.classList.add('hidden');
-    } else {
-      alert('Please allow popups to use the voice chat feature.');
-    }
-  });
-}
+startVoiceChat.addEventListener('click', () => {
+  const voicebotContainer = document.getElementById('voicebot-container');
+  const iframe = document.getElementById('voicebot-iframe');
+  iframe.src = VOICEBOT_URL;
+  voicebotContainer.classList.remove('hidden');
+});
+closeChat.addEventListener('click', () => {
+  chatBox.classList.add('hidden');
+  const voicebotContainer = document.getElementById('voicebot-container');
+  const iframe = document.getElementById('voicebot-iframe');
+  iframe.src = '';
+  voicebotContainer.classList.add('hidden');
+});
+
 
 // (Optional) Contact form handler
 const contactForm = document.getElementById('contact-form');
